@@ -1,0 +1,6 @@
+"C:\MongoDB\Server\3.6.1\bin\mongod.exe" --config "C:\MongoDB\mongod.cfg"
+sc.exe create MongoDB binPath= "\"C:\MongoDB\Server\3.6.1\bin\mongod.exe\" --service --config=\"C:\MongoDB\mongod.cfg\"" DisplayName= "MongoDB" start= "auto"
+
+$ mvn package -DskipTests
+
+27944964351215636299830809454
