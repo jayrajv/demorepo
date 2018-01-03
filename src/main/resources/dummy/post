@@ -1,0 +1,202 @@
+27946374563935879419490812332#Koregaon Park
+27946377367840978623342657965#Kalyaninagar
+27946378253284694161401135534#Vimannagar
+27946379839704684500422574512#Deccan Gymkhana
+27946379046494689330911855023#Nigdi
+27946380725148400038481052081#Dadar
+
+
+> db.applications.find({
+   locPoint: {
+     $nearSphere: {
+       $geometry: {
+         type: 'Point',
+         coordinates: [73.7659,18.6571]
+       },
+       $maxDistance: 15* 1609.34
+     }
+ })
+   }
+ 
+ 
+ db.places.find(
+   {
+     location:
+       { $near :
+          {
+            $geometry: { type: "Point",  coordinates: [ 73.8984,18.5362  ] },
+            $minDistance: 1000,
+            $maxDistance: 5000
+          }
+       }
+   }
+)
+
+
+db.locations.aggregate([{
+...   $geoNear: {
+...     near: {
+...       type: 'Point',
+...       coordinates: [73.8984, 18.5362]
+...     },
+...     spherical: true,
+...     maxDistance: 900 * 1609.34,
+...   }
+... }])
+
+
+{
+	"desc":"This is Pune",
+		"locPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 73.8984,18.5362 ]
+		},
+	"location":
+	{
+		"lati":18.5362,
+		"longi":73.8984,
+		"locality":"Koregaon Park",
+		"pincode":"411027",
+		"country":"India",
+		"state":"Maharashtra",
+		"city":"Pune"
+				"geoPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 73.8984,18.5362 ]
+		}
+	}
+}
+
+,
+
+{
+	"desc":"This is Pune",
+	"locPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [73.9033,18.5463]
+		},
+	"location":
+	{
+		"geoPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [73.9033,18.5463]
+		},
+		"lati":18.5463,
+		"longi":73.9033,
+		"locality":"Kalyaninagar",
+		"pincode":"411027",
+		"country":"India",
+		"state":"Maharashtra",
+		"city":"Pune"
+	}
+}
+
+,
+
+{
+	"desc":"This is Pune",
+			"locPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 73.8940,18.5463 ]
+		},
+	"location":
+	{
+					"geoPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 73.8940,18.5463 ]
+		},
+		"lati":18.5463,
+		"longi":73.8940,
+		"locality":"Vimannagar",
+		"pincode":"411027",
+		"country":"India",
+		"state":"Maharashtra",
+		"city":"Pune"
+	}
+}
+
+,
+
+{
+	"desc":"This is Pune",
+			"locPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 73.8417,18.5176 ]
+		},
+	"location":
+	{
+			"geoPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 73.8940,18.5463 ]
+		},,
+		"lati":18.5176,
+		"longi":73.8417,
+		"locality":"Deccan Gymkhana",
+		"pincode":"411027",
+		"country":"India",
+		"state":"Maharashtra",
+		"city":"Pune"
+	}
+}
+
+
+{
+	"desc":"This is Pune",
+			"locPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 73.7659,18.6571 ]
+		},
+	"location":
+	{
+	"geoPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 73.7659,18.6571 ]
+		},
+		"lati":18.6571,
+		"longi":73.7659,
+		"locality":"Nigdi",
+		"pincode":"411027",
+		"country":"India",
+		"state":"Maharashtra",
+		"city":"Pune"
+	}
+}
+
+{
+	"desc":"This is Mumbai",
+			"locPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 72.8424,19.0213 ]
+		},
+	"location":
+	{
+		"geoPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 72.8424,19.0213 ]
+		},
+		"lati":19.0213,
+		"longi":72.8424,
+		"locality":"Dadar",
+		"pincode":"411027",
+		"country":"India",
+		"state":"Maharashtra",
+		"city":"Mumbai"
+	}
+}	
+
+
+
+
+
