@@ -13,5 +13,7 @@ import com.example.demo.entity.ApplicationVO;
 public interface AppRepository extends MongoRepository<ApplicationVO, BigInteger> {
 	List<ApplicationVO> findByLocPointNear(Point p, Distance d);
 	List<ApplicationVO> findByLocationGeoPointNear(Point p, Distance d);
+	List<ApplicationVO> findByLocation_CityAllIgnoreCase(String city);
+	
 
 }
