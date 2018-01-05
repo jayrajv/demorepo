@@ -1,0 +1,194 @@
+[
+    {
+        "appId": 2.7946422304109542285574739264e+28,
+        "desc": "This is Pune",
+        "location": {
+            "lati": 18.5362,
+            "longi": 73.8984,
+            "pincode": "411027",
+            "country": "India",
+            "state": "Maharashtra",
+            "city": "Pune",
+            "locality": "Koregaon Park",
+            "geoPoint": {
+                "x": 73.8984,
+                "y": 18.5362,
+                "type": "Point",
+                "coordinates": [
+                    73.8984,
+                    18.5362
+                ]
+            }
+        },
+        "locPoint": {
+            "x": 73.8984,
+            "y": 18.5362,
+            "type": "Point",
+            "coordinates": [
+                73.8984,
+                18.5362
+            ]
+        },
+        "appType": "Cool"
+    },
+    {
+        "appId": 2.7946425642970219627003581763e+28,
+        "desc": "This is Pune",
+        "location": {
+            "lati": 18.5463,
+            "longi": 73.9033,
+            "pincode": "411027",
+            "country": "India",
+            "state": "Maharashtra",
+            "city": "Pune",
+            "locality": "Kalyaninagar",
+            "geoPoint": {
+                "x": 73.9033,
+                "y": 18.5463,
+                "type": "Point",
+                "coordinates": [
+                    73.9033,
+                    18.5463
+                ]
+            }
+        },
+        "locPoint": {
+            "x": 73.9033,
+            "y": 18.5463,
+            "type": "Point",
+            "coordinates": [
+                73.9033,
+                18.5463
+            ]
+        },
+        "appType": "Cool"
+    },
+    {
+        "appId": 2.7946550877915736103429070147e+28,
+        "desc": "This is Pune",
+        "location": {
+            "lati": 18.5463,
+            "longi": 73.894,
+            "pincode": "411027",
+            "country": "India",
+            "state": "Maharashtra",
+            "city": "Pune",
+            "locality": "Vimannagar",
+            "geoPoint": {
+                "x": 73.894,
+                "y": 18.5463,
+                "type": "Point",
+                "coordinates": [
+                    73.894,
+                    18.5463
+                ]
+            }
+        },
+        "locPoint": {
+            "x": 73.894,
+            "y": 18.5463,
+            "type": "Point",
+            "coordinates": [
+                73.894,
+                18.5463
+            ]
+        },
+        "appType": "Cool"
+    },
+    {
+        "appId": 2.7946553054631536801156160836e+28,
+        "desc": "This is Pune",
+        "location": {
+            "lati": 18.5176,
+            "longi": 73.8417,
+            "pincode": "411027",
+            "country": "India",
+            "state": "Maharashtra",
+            "city": "Pune",
+            "locality": "Deccan Gymkhana",
+            "geoPoint": {
+                "x": 73.894,
+                "y": 18.5463,
+                "type": "Point",
+                "coordinates": [
+                    73.894,
+                    18.5463
+                ]
+            }
+        },
+        "locPoint": {
+            "x": 73.8417,
+            "y": 18.5176,
+            "type": "Point",
+            "coordinates": [
+                73.8417,
+                18.5176
+            ]
+        },
+        "appType": "Cool"
+    },
+    {
+        "appId": 2.7946554050755716781471948101e+28,
+        "desc": "This is Pune",
+        "location": {
+            "lati": 18.6571,
+            "longi": 73.7659,
+            "pincode": "411027",
+            "country": "India",
+            "state": "Maharashtra",
+            "city": "Pune",
+            "locality": "Nigdi",
+            "geoPoint": {
+                "x": 73.7659,
+                "y": 18.6571,
+                "type": "Point",
+                "coordinates": [
+                    73.7659,
+                    18.6571
+                ]
+            }
+        },
+        "locPoint": {
+            "x": 73.7659,
+            "y": 18.6571,
+            "type": "Point",
+            "coordinates": [
+                73.7659,
+                18.6571
+            ]
+        },
+        "appType": "Cool"
+    },
+    {
+        "appId": 2.7946554364350366034534325574e+28,
+        "desc": "This is Mumbai",
+        "location": {
+            "lati": 19.0213,
+            "longi": 72.8424,
+            "pincode": "411027",
+            "country": "India",
+            "state": "Maharashtra",
+            "city": "Mumbai",
+            "locality": "Dadar",
+            "geoPoint": {
+                "x": 72.8424,
+                "y": 19.0213,
+                "type": "Point",
+                "coordinates": [
+                    72.8424,
+                    19.0213
+                ]
+            }
+        },
+        "locPoint": {
+            "x": 72.8424,
+            "y": 19.0213,
+            "type": "Point",
+            "coordinates": [
+                72.8424,
+                19.0213
+            ]
+        },
+        "appType": "Hot"
+    }
+]

@@ -6,10 +6,17 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.geo.Distance;
+import org.springframework.data.geo.GeoResults;
 import org.springframework.data.geo.Metrics;
 import org.springframework.data.geo.Point;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.NearQuery;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.criteria.CriteriaBuilder;
+import com.example.demo.criteria.IncTypeAndCityCriteriaVO;
+import com.example.demo.criteria.QueryBuilder;
 import com.example.demo.entity.ApplicationVO;
 import com.example.demo.repo.AppRepository;
 import com.example.demo.service.iAppService;
@@ -19,6 +26,10 @@ public class AppServiceBean implements iAppService {
 
 	@Autowired
 	private AppRepository appRepo;
+	
+		
+	@Autowired
+	private MongoTemplate mongoTemplate;
 
 	public AppRepository getAppRepo() {
 		return appRepo;
@@ -99,6 +110,43 @@ public class AppServiceBean implements iAppService {
 		System.out.println("Total locations near:" + apps.size());
 		return apps;
 
+	}
+	
+	public List<ApplicationVO> getByCityType()
+	{
+		Query query = new Query();
+
+		
+		IncTypeAndCityCriteriaVO typeCityCriteriaVo=null;
+		query.addCriteria(CriteriaBuilder.buildAppsWithCityTypeCriteria(typeCityCriteriaVo));
+		return mongoTemplate.find(query, ApplicationVO.class);
+		 
+		
+	}
+	
+	public GeoResults<ApplicationVO> getNear()
+	{
+	
+		//NearQuery query = QueryBuilder.findWithin(73.7659, 18.6571, 5);
+		
+		//return mongoTemplate.geoNear(query, ApplicationVO.class);
+		
+		return null;
+		 
+		
+	}
+
+
+	@Override
+	public GeoResults<ApplicationVO> runGeoTrials() {
+		// TODO Auto-generated method stub
+		return getNear();
+	}
+
+	@Override
+	public List<ApplicationVO> runTrials() {
+		// TODO Auto-generated method stub
+		return getByCityType();
 	}
 
 

@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.geo.Distance;
+import org.springframework.data.geo.GeoResults;
 
 import com.example.demo.entity.ApplicationVO;
 import com.mongodb.client.model.geojson.Point;
@@ -24,5 +25,9 @@ public interface iAppService {
 	List<ApplicationVO> findByLocationNear(Double dist);
 	
 	List<ApplicationVO> findByLocationGeoPoint(Double dist);
+	
+	List<ApplicationVO>  runTrials();
+	
+	GeoResults<ApplicationVO>  runGeoTrials();
 
 }

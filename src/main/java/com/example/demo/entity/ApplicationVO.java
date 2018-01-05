@@ -15,6 +15,15 @@ public class ApplicationVO {
 	private String desc;
 	private LocationVO location;
 	private GeoJsonPoint locPoint;
+	private String appType;
+
+	public String getAppType() {
+		return appType;
+	}
+
+	public void setAppType(String appType) {
+		this.appType = appType;
+	}
 
 	public GeoJsonPoint getLocPoint() {
 		return locPoint;
