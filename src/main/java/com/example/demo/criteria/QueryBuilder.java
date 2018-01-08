@@ -6,6 +6,10 @@ import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.query.NearQuery;
 import org.springframework.data.mongodb.core.query.Query;
 
+/*
+ * https://docs.mongodb.com/manual/tutorial/calculate-distances-using-spherical-geometry-with-2d-geospatial-indexes/
+ */
+
 public  final class QueryBuilder {
 
 	public QueryBuilder() {

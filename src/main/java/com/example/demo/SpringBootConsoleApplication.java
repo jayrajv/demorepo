@@ -1,9 +1,10 @@
 package com.example.demo;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.geo.GeoResults;
 
 import com.example.demo.entity.ApplicationVO;
 import com.example.demo.repo.AppRepository;
@@ -30,14 +31,8 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
     	
-    //	System.out.println("getByCityType");
-//appRepo.findAll();
-        //List<ApplicationVO> apps = appRepo.findByLocation_CityAllIgnoreCase("Pune");
-    	//List<ApplicationVO> apps = appService.runTrials();
-    	//System.out.println("App size for getByCityType" + apps.size());
-    	/*GeoResults<ApplicationVO> apps = appService.runGeoTrials();
-    	
-        System.out.println("App size for getByCityType" + apps.toString());*/
+    	List<ApplicationVO> apps = appService.runTrials();
+
 
     }
 }
