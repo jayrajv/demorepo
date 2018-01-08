@@ -1,0 +1,21 @@
+
+db.applications.find(
+ { "location.geoPoint" : { "$nearSphere" : { "x" : 73.8984 , "y" : 18.5362} , "$maxDistance" : 0.003135711885774796}}
+)
+db.applications.find({ "location.geoPoint" : { "$nearSphere" : { "x" : 73.8984 , "y" : 18.5362} , "$maxDistance" : 3.135711885774796E-4}})
+db.applications.find({ "location.geoPoint" : { "$near" : { "x" : 73.8984 , "y" : 18.5362} , "$maxDistance" : 1000.0}})
+
+db.applications.find({ "location.geoPoint" : { "$nearSphere" : { "x" : 73.8984 , "y" : 18.5362} , "$maxDistance" : 3.135711885774796E-4}})
+
+db.applications.find(
+   { "location.geoPoint" :
+       { $near :
+          {
+            $geometry : {
+               type : "Point" ,
+               coordinates : [73.8984,18.5362] },
+            $maxDistance : 1
+          }
+       }
+    }
+)
