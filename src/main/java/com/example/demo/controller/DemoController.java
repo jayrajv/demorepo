@@ -43,7 +43,7 @@ public class DemoController {
 		return new ResponseEntity<Collection<ApplicationVO>>(listApps, HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "/api/getlocations/{distance}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+/*	@RequestMapping(value = "/api/getlocations/{distance}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<ApplicationVO>> getbyLocDistance(@PathVariable("distance") String distance) {
 
 		//List<ApplicationVO> listApps = appService.findByLocationNear(Double.parseDouble(distance));
@@ -51,7 +51,7 @@ public class DemoController {
 
 		return new ResponseEntity<List<ApplicationVO>>(listApps, HttpStatus.OK);
 	}
-
+*/
 	@RequestMapping(value = "/api/delete/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<ApplicationVO> deleteApp(@PathVariable("id") BigInteger id) {
 

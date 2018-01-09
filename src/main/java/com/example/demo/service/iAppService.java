@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.GeoResults;
 
+import com.example.demo.criteria.IncidentCriteriaVO;
 import com.example.demo.entity.ApplicationVO;
 import com.mongodb.client.model.geojson.Point;
 
@@ -22,12 +23,10 @@ public interface iAppService {
 
 	void delete(BigInteger id);
 	
-	List<ApplicationVO> findByLocationNear(Double dist);
-	
-	List<ApplicationVO> findByLocationGeoPoint(Double dist);
-	
 	List<ApplicationVO>  runTrials();
 	
 	GeoResults<ApplicationVO>  runGeoTrials();
+	
+	List<ApplicationVO> findUsingRepoLocationsWithin(IncidentCriteriaVO criteriaVO);
 
 }

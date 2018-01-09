@@ -2,16 +2,14 @@ package com.example.demo.criteria;
 
 import java.util.List;
 
-public class IncTypeAndCityCriteriaVO
+public class IncidentCriteriaVO
 
 {
 	private List<String> cities;
 	private List<String> incTypes;
 	private double distance;
-
-	public IncTypeAndCityCriteriaVO() {
-		// TODO Auto-generated constructor stub
-	}
+	private double latitude;
+	private double longitude;
 
 	public List<String> getCities() {
 		return cities;
@@ -35,6 +33,22 @@ public class IncTypeAndCityCriteriaVO
 
 	public void setDistance(double distance) {
 		this.distance = distance;
+	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
 	}
 
 }

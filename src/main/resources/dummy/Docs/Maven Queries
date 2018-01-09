@@ -2,11 +2,13 @@
 db.applications.find(
  { "location.geoPoint" : { "$nearSphere" : { "x" : 73.8984 , "y" : 18.5362} , "$maxDistance" : 0.003135711885774796}}
 )
+-------------
 db.applications.find({ "location.geoPoint" : { "$nearSphere" : { "x" : 73.8984 , "y" : 18.5362} , "$maxDistance" : 3.135711885774796E-4}})
+----------------
 db.applications.find({ "location.geoPoint" : { "$near" : { "x" : 73.8984 , "y" : 18.5362} , "$maxDistance" : 1000.0}})
-
+-------------------
 db.applications.find({ "location.geoPoint" : { "$nearSphere" : { "x" : 73.8984 , "y" : 18.5362} , "$maxDistance" : 3.135711885774796E-4}})
-
+--------------------
 db.applications.find(
    { "location.geoPoint" :
        { $near :
@@ -19,3 +21,39 @@ db.applications.find(
        }
     }
 )
+---------------------------
+db.applications.update(
+{"location.locality":"Deccan Gymkhana"},
+{
+	$set:
+	{
+		appType:"Cool",
+		"location.geoPoint":
+		{
+			"type" : "Point",
+			 "coordinates" : [ 73.8417,18.5176 ]
+		},
+		"location.longi":18.5176,
+		"location.lati":73.8417,
+		
+	}
+})
+---------------------------------
+
+db.applications.find(
+   {
+     "location.geoPoint": {
+        $nearSphere: {
+           $geometry: {
+              type : "Point",
+              coordinates : [73.894,18.5463]
+           },
+           $minDistance: 0.000156787
+,
+           $maxDistance: 0.000783933
+        }
+     }
+   }
+)
+-----------------------------------
+

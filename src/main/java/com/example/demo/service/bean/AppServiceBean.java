@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.criteria.CriteriaBuilder;
-import com.example.demo.criteria.IncTypeAndCityCriteriaVO;
+import com.example.demo.criteria.IncidentCriteriaVO;
 import com.example.demo.entity.ApplicationVO;
 import com.example.demo.repo.AppRepository;
 import com.example.demo.service.iAppService;
@@ -89,43 +89,11 @@ public class AppServiceBean implements iAppService {
 
 	}
 
-	@Override
-	public List<ApplicationVO> findByLocationNear(Double dist) {
-		// TODO Auto-generated method stub
-		System.out.println("Inside findByLocationNear");
-
-		// Position pos = new Position(73.8984, 18.5362);
-		;
-		Point p2 = new Point(73.8417,18.5176); // Koregaon Park
-		// Point p2 = new Point(73.7659, 18.6571); // Nigdi
-		Distance d = new Distance(dist, Metrics.KILOMETERS);
-
-		List<ApplicationVO> apps = appRepo.findByLocPointNear(p2, d);
-		System.out.println("Total locations near:" + apps.size());
-		return apps;
-
-	}
-
-	public List<ApplicationVO> findByLocationGeoPoint(Double dist) {
-		// TODO Auto-generated method stub
-		System.out.println("Inside findByfindByLocationGeoPoint");
-
-		// Position pos = new Position(73.8984, 18.5362);
-		;
-		Point p2 = new Point(73.8984, 18.5362); // Koregaon Park
-		// Point p2 = new Point(73.7659, 18.6571); // Nigdi
-		Distance d = new Distance(dist, Metrics.KILOMETERS);
-
-		List<ApplicationVO> apps = appRepo.findByLocationGeoPointNear(p2, d);
-		System.out.println("Total locations near:" + apps.size());
-		return apps;
-
-	}
 
 	public List<ApplicationVO> getByCityType() {
 		Query query = new Query();
 
-		IncTypeAndCityCriteriaVO typeCityCriteriaVo = null;
+		IncidentCriteriaVO typeCityCriteriaVo = null;
 		query.addCriteria(CriteriaBuilder.buildAppsWithCityTypeCriteria(typeCityCriteriaVo));
 		return mongoTemplate.find(query, ApplicationVO.class);
 
@@ -151,11 +119,34 @@ public class AppServiceBean implements iAppService {
 	public List<ApplicationVO> runTrials() {
 		// TODO Auto-generated method stub
 		Query query = new Query();
-		query.addCriteria(CriteriaBuilder.findWithinCriteria(73.8984,18.5362, 30));
-		
-		//List<ApplicationVO> apps = findByLocationGeoPoint(new Double(2));
+		IncidentCriteriaVO criteriaVO = null;
+
+		// query.addCriteria(CriteriaBuilder.findWithinCriteria(73.8984,18.5362, 30));
+		query.addCriteria(CriteriaBuilder.findWithinCriteria(criteriaVO));
+		// List<ApplicationVO> apps = findByLocationGeoPoint(new Double(2));
 		List<ApplicationVO> apps = mongoTemplate.find(query, ApplicationVO.class);
 		Utils.printApps(apps, "CriteriaBuilder.findWithinCriteria");
+		return apps;
+	}
+
+	@Override
+	public List<ApplicationVO> findUsingRepoLocationsWithin(IncidentCriteriaVO criteriaVO){
+		/*
+		 * This method uses repository method to find apps near x,y
+		 */
+
+		double longitude = criteriaVO.getLongitude();
+		double latitude = criteriaVO.getLatitude();
+		double distance = criteriaVO.getDistance();
+
+		Point pt = new Point(longitude, latitude);
+		if (distance == 0) {
+			distance = 30;
+		}
+		Distance d = new Distance(distance, Metrics.KILOMETERS);
+
+		List<ApplicationVO> apps = appRepo.findByLocation_GeoPointNear(pt, d);
+
 		return apps;
 	}
 
