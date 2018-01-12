@@ -1,11 +1,12 @@
 package com.example.demo.criteria;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.data.geo.Circle;
 import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.query.Criteria;
-import com.example.demo.criteria.IncidentCriteriaVO;
 
 /*
  * https://docs.mongodb.com/manual/tutorial/calculate-distances-using-spherical-geometry-with-2d-geospatial-indexes/
@@ -38,7 +39,7 @@ public final class CriteriaBuilder {
 		 * maximum distance are determined by the coordinate system in use. For GeoJSON
 		 * point object, specify the distance in meters, not radians.
 		 */
-		//criteriaVO=CriteriaBuilder.buildIncTypeCityCriteriaVO(criteriaVO);
+		criteriaVO=buildIncTypeCityCriteriaVO(criteriaVO);
 		List<String> cities = criteriaVO.getCities();
 		List<String> incTypes = criteriaVO.getIncTypes();
 		
@@ -82,11 +83,11 @@ public final class CriteriaBuilder {
 		typeCityCriteriaVo.setLongitude(73.8984);
 		typeCityCriteriaVo.setLatitude(18.5362);
 		typeCityCriteriaVo.setDistance(3);
-		/*List<String> lstCities = new ArrayList<>(Arrays.asList(cities));
+		List<String> lstCities = new ArrayList<>(Arrays.asList(cities));
 		List<String> lstTypes = new ArrayList<>(Arrays.asList(types));
 		typeCityCriteriaVo.setCities(lstCities);
 		typeCityCriteriaVo.setIncTypes(lstTypes);
-*/
+
 		return typeCityCriteriaVo;
 	}
 }

@@ -1,9 +1,11 @@
 package com.example.demo.criteria;
 
 import java.util.Collection;
+import java.util.List;
+
+import org.springframework.data.mongodb.core.query.Query;
 
 import com.example.demo.entity.ApplicationVO;
-
 public class Utils {
 
 	public Utils() {
@@ -22,6 +24,14 @@ public class Utils {
 			}
 		}
 
+	}
+	
+	public static Query excludeFields(Query query,String[] fields)
+	{
+		for (String field : fields) {
+			query.fields().exclude(field);
+		}
+		return query;
 	}
 
 }
