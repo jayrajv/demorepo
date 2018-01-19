@@ -1,5 +1,6 @@
 package com.example.demo.criteria;
 
+import java.util.Date;
 import java.util.List;
 
 public class IncidentCriteriaVO
@@ -10,6 +11,24 @@ public class IncidentCriteriaVO
 	private double distance;
 	private double latitude;
 	private double longitude;
+	private Date startDate;
+	private Date endDate;
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
 
 	public List<String> getCities() {
 		return cities;

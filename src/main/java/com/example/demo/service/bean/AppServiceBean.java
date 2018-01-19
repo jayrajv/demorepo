@@ -122,8 +122,9 @@ public class AppServiceBean implements iAppService {
 		IncidentCriteriaVO criteriaVO = null;
 
 		// query.addCriteria(CriteriaBuilder.findWithinCriteria(73.8984,18.5362, 30));
-		query.addCriteria(CriteriaBuilder.findWithinCriteria(criteriaVO));
+		//query.addCriteria(CriteriaBuilder.findWithinCriteria(criteriaVO));
 		// List<ApplicationVO> apps = findByLocationGeoPoint(new Double(2));
+		query.addCriteria(CriteriaBuilder.findwithinDate(criteriaVO));
 		List<ApplicationVO> apps = mongoTemplate.find(query, ApplicationVO.class);
 		Utils.printApps(apps, "CriteriaBuilder.findWithinCriteria");
 		return apps;

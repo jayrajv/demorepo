@@ -1,3 +1,7 @@
+db.applications.update({"location.city":"Pune"},{$set : {"createdDate":new ISODate("2017-12-28T01:34:54Z")}},false,true)
+db.applications.update({"location.city":"Pune"},{$set : {"createdDate":new Date()}},false,true)
+
+
 
 db.applications.find(
  { "location.geoPoint" : { "$nearSphere" : { "x" : 73.8984 , "y" : 18.5362} , "$maxDistance" : 0.003135711885774796}}

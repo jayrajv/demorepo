@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import java.math.BigInteger;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
@@ -16,6 +17,15 @@ public class ApplicationVO {
 	private LocationVO location;
 	private GeoJsonPoint locPoint;
 	private String appType;
+	private Date createdDate;
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
 
 	public String getAppType() {
 		return appType;
